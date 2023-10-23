@@ -39,6 +39,7 @@ widgets:
 #     - 2001:db8::/32
 #     - ff00::/8
 #     - fec0::/10
+# allowedIpRanges: []
   publicUrl: https://example.com/widgetapi/v1/static
   branding:
     widgetTitle: Hookshot Configuration
@@ -57,6 +58,10 @@ When `addOnInvite` is true, the bridge will add a widget to rooms when the bot i
 Unless you know what you are doing, it is recommended to not include this key. The default blocked IPs are listed above for your convenience.
 
 `publicUrl` should be set to the publicly reachable address for the widget `public` content. By default, Hookshot hosts this content on the
+
+`allowedIpRanges` describes which IP ranges should be allowed when resolving homeserver IP addresses even if they are in `disallowedIpRanges`.
+This allows specific sub-ranges of `disallowedIpRanges` to be used without having to carefully construct the ranges that still should be disallowed.
+
 `widgets` listener under `/widgetapi/v1/static`.
 
 `branding` allows you to change the strings used for various bits of widget UI. At the moment you can:
